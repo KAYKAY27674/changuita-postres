@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CHANGUITA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pantalla {
+            display: none;
+            padding: 30px;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #c678dd;
+            font-size: 48px;
+            margin-top: 40px;
+        }
+
+        .bienvenida {
+            font-size: 20px;
+            color: #6a0572;
+            margin-bottom: 30px;
+        }
+
+        .boton-menu, .volver {
+            background-color: #ffb3d9;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .boton-menu:hover, .volver:hover {
+            background-color: #d291bc;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border: 2px solid #d291bc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #d291bc;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #fddde6;
+            color: #6a0572;
+        }
+
+        img {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #c678dd;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pantalla de inicio -->
+    <div id="inicio" class="pantalla visible">
+        <h1>CHANGUITA</h1>
+        <p class="bienvenida">¡Bienvenida a este dulce emprendimiento de postres!<br>
+        Estamos encantadas de endulzar tu día con nuestras creaciones caseras 💕</p>
+        <button class="boton-menu" onclick="mostrarPantalla('menu')">Ver Menú de Postres</button>
+    </div>
+
+    <!-- Pantalla del menú -->
+    <div id="menu" class="pantalla">
+        <h2>Menú de Postres</h2>
+        <table>
+            <tr>
+                <th>Postre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr>
+            <tr>
+                <td>Cheesecake de fresa</td>
+                <td>$50.00</td>
+                <td><img src="https://cdn.pixabay.com/photo/2020/02/04/10/19/cheesecake-4812445_1280.jpg" alt="Cheesecake de fresa"></td>
+            </tr>
+            <tr>
+                <td>Donas glaseadas</td>
+                <td>$20.00</td>
+                <td><img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/donuts-2691994_1280.jpg" alt="Donas glaseadas"></td>
+            </tr>
+            <tr>
+                <td>Cupcakes decorados</td>
+                <td>$35.00</td>
+                <td><img src="https://cdn.pixabay.com/photo/2017/01/22/19/20/cupcake-2009443_1280.jpg" alt="Cupcakes decorados"></td>
+            </tr>
+            <tr>
+                <td>Flan napolitano</td>
+                <td>$25.00</td>
+                <td><img src="https://cdn.pixabay.com/photo/2020/06/15/12/12/flan-5299267_1280.jpg" alt="Flan napolitano"></td>
+            </tr>
+            <tr>
+                <td>Brownies de chocolate</td>
+                <td>$30.00</td>
+                <td><img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/brownies-3007067_1280.jpg" alt="Brownies de chocolate"></td>
+            </tr>
+        </table>
+        <br>
+        <button class="volver" onclick="mostrarPantalla('inicio')">← Volver al Inicio</button>
+    </div>
+
+    <!-- Script para cambiar pantallas -->
+    <script>
+        function mostrarPantalla(id) {
+            document.getElementById('inicio').classList.remove('visible');
+            document.getElementById('menu').classList.remove('visible');
+            document.getElementById(id).classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>
